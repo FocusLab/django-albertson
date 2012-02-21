@@ -1,3 +1,8 @@
 [aws]
 access_key=YOUR_AWS_ACCESS_KEY_ID
 secret_key=YOUR_AWS_SECRET_KEY
+
+[albertson]
+read_units=1
+write_units=2
+auto_create_table=Off

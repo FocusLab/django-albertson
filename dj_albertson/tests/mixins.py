@@ -62,7 +62,15 @@ class SettingsMixinTests(unittest.TestCase):
     def test_namespaced_settings(self):
         settings.ALBERTSON_AWS_ACCESS_KEY = self.config.get('aws', 'access_key')
         settings.ALBERTSON_AWS_SECRET_KEY = self.config.get('aws', 'secret_key')
-        DjangoCounterPool()
+        settings.ALBERTSON_DEFAULT_READ_UNITS = self.config.getint('albertson', 'read_units')
+        settings.ALBERTSON_DEFAULT_WRITE_UNITS = self.config.getint('albertson', 'write_units')
+        settings.ALBERTSON_AUTO_CREATE_TABLE = self.config.getboolean('albertson', 'auto_create_table')
+
+        pool = DjangoCounterPool()
+
+        self.assertEquals(self.config.getint('albertson', 'read_units'), pool.read_units)
+        self.assertEquals(self.config.getint('albertson', 'write_units'), pool.write_units)
+        self.assertEquals(self.config.getboolean('albertson', 'auto_create_table'), pool.auto_create_table)
 
     def test_kwargs_override(self):
         settings.ALBERTSON_AWS_ACCESS_KEY = 'bad'
