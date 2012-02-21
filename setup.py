@@ -15,7 +15,7 @@ setup(
     url="https://github.com/FocusLab/django-albertson",
     packages=['dj_albertson'],
     license="BSD",
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     install_requires=['albertson', 'django'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
