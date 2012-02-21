@@ -4,7 +4,7 @@ django-albertson
 
 Homepage:  https://github.com/FocusLab/django-albertson
 
-Integration library for Django and `Albertson<https://github.com/FocusLab/Albertson>`_.
+Integration library for Django and `Albertson <https://github.com/FocusLab/Albertson>`_.
 
 ---
 Use
